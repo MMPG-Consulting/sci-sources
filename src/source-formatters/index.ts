@@ -17,7 +17,7 @@ import { genKey } from "../utils";
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatBookSource(source: Books, key?: number) {
+export function formatBookSource(source: Books, key?: number) {
   const keyString = genKey(key);
   return `${keyString}${source.author}. ${source.year}. ${source.title}. ${source.edition} ${source.placePublication}: ${source.publisher}. ${source.pages}`;
 }
@@ -33,7 +33,7 @@ function formatBookSource(source: Books, key?: number) {
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatBookPartSource(source: BooksPart, key?: number) {
+export function formatBookPartSource(source: BooksPart, key?: number) {
   const keyString = genKey(key);
   return `${keyString}${source.author}. ${source.year}. ${source.title}. ${source.in.edition} ${source.in.placePublication}: ${source.publisher}. ${source.pages}`;
 }
@@ -49,7 +49,10 @@ function formatBookPartSource(source: BooksPart, key?: number) {
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatConferencePapersSource(source: ConferencePapers, key?: number) {
+export function formatConferencePapersSource(
+  source: ConferencePapers,
+  key?: number
+) {
   const keyString = genKey(key);
   return `${keyString}${source.author}. ${source.date}. ${source.title}. In: ${source.connectivePhrase}, editor. ${source.nameConference}; ${source.datesConference}; ${source.placeConference}. ${source.placePublication}: ${source.publisher}. ${source.pages}`;
 }
@@ -65,7 +68,7 @@ function formatConferencePapersSource(source: ConferencePapers, key?: number) {
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatConferenceproceedingsSource(
+export function formatConferenceproceedingsSource(
   source: ConferenceProceedings,
   key?: number
 ) {
@@ -84,7 +87,10 @@ function formatConferenceproceedingsSource(
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatJournalArticleSource(source: JournalArticles, key?: number) {
+export function formatJournalArticleSource(
+  source: JournalArticles,
+  key?: number
+) {
   const keyString = genKey(key);
   const urlString = source.url
     ? ` {${source.url}}. Accessed ${source.dateAccessed}.`
@@ -103,17 +109,8 @@ function formatJournalArticleSource(source: JournalArticles, key?: number) {
  * @param key - The key of the source in the list.
  * @returns The formatted citation string.
  */
-function formatWebSource(source: Websites, key?: number) {
+export function formatWebSource(source: Websites, key?: number) {
   const keyString = genKey(key);
   const urlString = source.url ? ` Available from ${source.url}.` : "";
   return `${keyString}${source.author} [${source.availableFrom}]. ${source.placePublication}: ${source.publisher}; [${source.year}].${urlString}`;
 }
-
-export default {
-  formatBookSource,
-  formatBookPartSource,
-  formatConferencePapersSource,
-  formatConferenceproceedingsSource,
-  formatJournalArticleSource,
-  formatWebSource,
-};
