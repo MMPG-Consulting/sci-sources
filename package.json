@@ -1,0 +1,14 @@
+{
+  "name": "@mmpg-soft/sci-sources",
+  "version": "0.0.1",
+  "description": "Cite your sources in a scientific way",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "typescript": "^5.4.3"
+  }
+}
