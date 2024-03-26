@@ -1,6 +1,6 @@
 {
   "name": "@mmpg-soft/sci-sources",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cite your sources in a scientific way",
   "main": "dist/index.js",
   "scripts": {

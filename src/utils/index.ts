@@ -5,5 +5,5 @@
  * @returns the key formatted as a string.
  */
 export function genKey(key?: number) {
-  return key ? `${key + 1}: ` : "";
+  return key || key === 0 ? `${key + 1}: ` : "";
 }
