@@ -4,7 +4,8 @@
   "description": "Cite your sources in a scientific way",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "typescript": "^5.4.3"
